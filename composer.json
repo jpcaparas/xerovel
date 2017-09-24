@@ -9,9 +9,20 @@
             "email": "jp@jpcaparas.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "JPCaparas\\Xerovel\\": "src/"
+        },
+        "files": [
+            "helpers.php"
+        ]
+    },
     "minimum-stability": "stable",
     "require": {
         "php": "^7.0",
         "calcinai/xero-php": "~1.5.0"
+    },
+    "require-dev": {
+        "psy/psysh": "@stable"
     }
 }
