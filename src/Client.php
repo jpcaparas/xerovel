@@ -2,9 +2,15 @@
 
 namespace JPCaparas\Xerovel;
 
-use XeroPHP\Application\PrivateApplication;
+use XeroPHP\Application\PrivateApplication as BaseClient;
+use JPCaparas\Xerovel\Contracts\Client as ClientContract;
 
-class Client extends PrivateApplication
+/**
+ * Class Client
+ *
+ * @package JPCaparas\Xerovel
+ */
+class Client extends BaseClient implements ClientContract
 {
     /**
      * Client constructor.
