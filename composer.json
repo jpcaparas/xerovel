@@ -12,10 +12,7 @@
     "autoload": {
         "psr-4": {
             "JPCaparas\\Xerovel\\": "src/"
-        },
-        "files": [
-            "helpers.php"
-        ]
+        }
     },
     "require": {
         "php": "^7.0",
