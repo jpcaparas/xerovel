@@ -26,3 +26,6 @@ before_install:
 - alias composer="php-n -d memory_limit=-1 $(which composer)"
 - travis_retry composer self-update --stable
 - travis_retry composer update --prefer-dist --no-interaction --no-suggest --no-plugins
+
+script:
+- echo "Hello World"
