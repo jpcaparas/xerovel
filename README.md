@@ -21,5 +21,4 @@ A Laravel service provider for the [`calcinai/xero-php` Xero PHP API client](htt
 
 ## TODO
 
-- Packagist
 - Tests
