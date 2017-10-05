@@ -4,6 +4,8 @@ A Laravel service provider for the [`calcinai/xero-php` Xero PHP API client](htt
 
 ## Installation
 
+1. Run `composer install jpcaparas/xerovel`.
+
 1. Publish the config files:
 
         php artisan vendor:publish --provider=JPCaparas\\Xerovel\\Providers\\XerovelServiceProvider
