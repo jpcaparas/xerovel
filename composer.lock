@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa9322882c7cb86af45c131680bfa8c2",
+    "content-hash": "c87501df1bc3771209581147e1f8f2a5",
     "packages": [
         {
             "name": "calcinai/xero-php",
