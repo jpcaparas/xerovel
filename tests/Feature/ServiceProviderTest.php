@@ -18,6 +18,8 @@ class ServiceProviderTest extends TestCase
         parent::setUp();
 
         Storage::fake(self::TEST_DISK_NAME);
+
+        @unlink($this->getConfigPath());
     }
 
     protected function getPackageProviders($app)
@@ -28,6 +30,16 @@ class ServiceProviderTest extends TestCase
     protected function getTestDisk() : FilesystemAdapter
     {
         return Storage::disk(self::TEST_DISK_NAME);
+    }
+
+    protected function getConfigPath() : string {
+        return config_path() . '/xerovel.php';
+    }
+
+    public function testConfigFilesPublished()
+    {
+        $this->artisan('vendor:publish', ['--provider' => 'JPCaparas\\Xerovel\\Providers\\XerovelServiceProvider']);
+        $this->assertFileExists($this->getConfigPath());
     }
 
     public function testBindingHasSucceeded()
