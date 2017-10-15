@@ -12,10 +12,12 @@
     "autoload": {
         "psr-4": {
             "JPCaparas\\Xerovel\\": "src/"
-        },
-        "files": [
-            "helpers.php"
-        ]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JPCaparas\\Tests\\Xerovel\\": "tests/"
+        }
     },
     "require": {
         "php": "^7.0",
@@ -24,9 +26,10 @@
         "illuminate/contracts": "~5.4.0"
     },
     "require-dev": {
-        "psy/psysh": "@stable",
+        "mockery/mockery": "~1.0",
+        "orchestra/testbench": "~3.4.0",
         "phpunit/phpunit": "^6.3",
-        "mockery/mockery": "^0.9.9"
+        "psy/psysh": "@stable"
     },
     "config": {
         "optimize-autoloader": true,

@@ -5,8 +5,8 @@ namespace JPCaparas\Xerovel\Providers;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\ServiceProvider;
-use JPCaparas\Xerovel\Client;
-use JPCaparas\Xerovel\Contracts\Client as ClientContract;
+use JPCaparas\Xerovel\Xerovel;
+use JPCaparas\Xerovel\Contracts\Xerovel as XerovelContract;
 
 /**
  * Class XerovelServiceProvider
@@ -36,7 +36,7 @@ class XerovelServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(ClientContract::class, function () {
+        $this->app->bind(XerovelContract::class, function () {
             $isAbsolutePath = '/^\/|\\\/';
 
             // Load from storage/app
@@ -55,14 +55,18 @@ class XerovelServiceProvider extends ServiceProvider
 
             $config = [
                 'oauth' => [
-                    'callback'        => config('xerovel.callback_url'),
+                    'callback_url'        => config('xerovel.callback_url'),
                     'consumer_key'    => config('xerovel.consumer_key'),
                     'consumer_secret' => config('xerovel.consumer_secret'),
                     'rsa_private_key' => $privateKey
                 ],
             ];
 
-            return new Client($config);
+            $client = new Xerovel();
+            $client->setConfig($config);
+            $client->setClient();
+
+            return $client;
         });
     }
 }

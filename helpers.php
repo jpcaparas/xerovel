@@ -1,3 +1,0 @@
-<?php
-
-// Add helpers here
