@@ -26,4 +26,4 @@ before_install:
 - travis_retry composer update --prefer-dist --no-interaction --no-suggest --no-plugins
 
 script:
-- $(which) php vendor/bin/phpunit
+- $(which php) vendor/bin/phpunit
