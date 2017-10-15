@@ -20,7 +20,7 @@
         }
     },
     "require": {
-        "php": "^7.0",
+        "php": "^7.1",
         "calcinai/xero-php": "~1.5.0",
         "illuminate/container": "~5.4.0",
         "illuminate/contracts": "~5.4.0"
